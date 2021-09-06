@@ -1,0 +1,31 @@
+@import "~node_modules/bootstrap/scss/functions";
+@import "~node_modules/bootstrap/scss/variables";
+
+.jumblotron {
+  border-radius: 40px;
+  background: #F1F4F3 url(promo.svg) no-repeat right top;
+  background-size: contain;
+
+  h3 {
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 120%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #000000;
+  }
+}
+
+.col {
+  background: transparentize($white, 0.85);
+  border-radius: 40px;
+  padding: 40px 57px;
+}
+
+img {
+  max-width: 100%;
+}
