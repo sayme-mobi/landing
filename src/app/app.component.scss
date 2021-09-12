@@ -1,31 +1,194 @@
 @import "~node_modules/bootstrap/scss/functions";
 @import "~node_modules/bootstrap/scss/variables";
+@import "~node_modules/bootstrap/scss/mixins";
 
-.jumblotron {
+.navbar {
+  .nav-item {
+    &:last-of-type .nav-link {
+      padding-right: 0;
+    }
+
+    .nav-link {
+      img {
+        max-width: 180px;
+        background: #181717;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+}
+
+.jumbotron {
   border-radius: 40px;
-  background: #F1F4F3 url(promo.svg) no-repeat right top;
-  background-size: contain;
+  background: #F1F4F3;
 
-  h3 {
-    font-family: Nunito, sans-serif;
-    font-style: normal;
+  h1 {
     font-weight: 900;
-    font-size: 64px;
     line-height: 120%;
 
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    margin-bottom: 40px;
+  }
 
-    color: #000000;
+  > div {
+    padding: 50px 24px 30px;
+    color: $black;
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+
+    > div {
+      padding: 18% 86px;
+      background: url(../assets/promo.svg) no-repeat right center;
+      background-size: contain;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 32px;
+      max-width: 550px;
+    }
+
+    h1 {
+      font-size: 64px;
+      max-width: 550px;
+    }
   }
 }
 
 .col {
-  background: transparentize($white, 0.85);
-  border-radius: 40px;
-  padding: 40px 57px;
+  .app-preview {
+    background: transparentize($white, 0.85);
+    border-radius: 40px;
+    padding: 32px 24px 64px;
+    color: #F1F4F3;
+    min-height: 308px;
+
+    .badge {
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      vertical-align: middle;
+      padding: 0;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 32px;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding: 40px 57px 52px;
+
+      .badge {
+        margin-bottom: 37px;
+      }
+
+      h3 {
+        @include font-size(31px);
+      }
+
+      p {
+        margin-bottom: 41px;
+      }
+    }
+  }
 }
 
-img {
-  max-width: 100%;
+.download {
+  border-radius: 40px;
+  padding: 32px 24px;
+  color: $white;
+  min-height: 308px;
+
+  h2 {
+    font-weight: 800;
+    line-height: 100%;
+    margin-bottom: 40px;
+  }
+
+  img {
+    max-width: 180px;
+    background: #181717;
+    border-radius: 8px;
+    margin: 0 16px 12px 0;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 440px;
+    padding: 65px 57px 40px;
+
+    h2 {
+      @include font-size(56px);
+    }
+  }
+}
+
+.links {
+  padding: 32px 24px;
+  border-radius: 40px;
+  background: transparentize($white, 0.85);
+  color: $white;
+  min-height: 308px;
+
+  h4 {
+    font-weight: 800;
+    line-height: 32px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    vertical-align: middle;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 440px;
+    padding: 57px 48px 48px;
+
+    a {
+      width: 88px;
+      height: 88px;
+      line-height: 88px;
+    }
+  }
 }
